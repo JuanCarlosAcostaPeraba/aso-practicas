@@ -88,17 +88,17 @@ Prácticas de la asignatura de Administración de Sistemas Operativos.
 
 1. [Obtener los nombres de las cuentas de usuario del sistema, ordenados alfabéticamente. (pista: `cut`)](./pract-2/2.6-ejercicios-sobre-filtros-y-tuberias/1.md)
 2. [Obtener los nombres de cuentas de usuario del sistema que contengan alguna letra mayúscula. (pista: `grep`)](./pract-2/2.6-ejercicios-sobre-filtros-y-tuberias/2.md)
-3. [Encontrar los GID que se utilizan más de una vez en el fichero `/etc/passwd». El GID es el campo número 4. Hay que devolver la lista de GID que se repiten. (pista: `uniq`)](./pract-2/2.6-ejercicios-sobre-filtros-y-tuberias/3.md)
-4. [Quitar los comentarios de un fichero de texto. Un comentario empieza por el carácter `#» y llega hasta el final de la línea. La salida de la orden debe ser el contenido del fichero original, con todos los comentarios eliminados. (pista: `cut`)](./pract-2/2.6-ejercicios-sobre-filtros-y-tuberias/4.md)
-5. [](./pract-2/2.6-ejercicios-sobre-filtros-y-tuberias/5.md)
-6. [](./pract-2/2.6-ejercicios-sobre-filtros-y-tuberias/6.md)
-7. [](./pract-2/2.6-ejercicios-sobre-filtros-y-tuberias/7.md)
-8. [](./pract-2/2.6-ejercicios-sobre-filtros-y-tuberias/8.md)
-9. [](./pract-2/2.6-ejercicios-sobre-filtros-y-tuberias/9.md)
-10. [](./pract-2/2.6-ejercicios-sobre-filtros-y-tuberias/10.md)
-11. [](./pract-2/2.6-ejercicios-sobre-filtros-y-tuberias/11.md)
-12. [](./pract-2/2.6-ejercicios-sobre-filtros-y-tuberias/12.md)
-13. [](./pract-2/2.6-ejercicios-sobre-filtros-y-tuberias/13.md)
+3. [Encontrar los GID que se utilizan más de una vez en el fichero `/etc/passwd`. El GID es el campo número 4. Hay que devolver la lista de GID que se repiten. (pista: `uniq`)](./pract-2/2.6-ejercicios-sobre-filtros-y-tuberias/3.md)
+4. [Quitar los comentarios de un fichero de texto. Un comentario empieza por el carácter `#` y llega hasta el final de la línea. La salida de la orden debe ser el contenido del fichero original, con todos los comentarios eliminados. (pista: `cut`)](./pract-2/2.6-ejercicios-sobre-filtros-y-tuberias/4.md)
+5. [Contar el número de apariciones de una palabra dentro de un fichero de texto. La palabra se pasa como argumento en la orden. Se considera que una palabra es un grupo de caracteres sin espacios ni tabuladores: el espacio o el tabulador actúan como separadores de palabras. (pista: usar `tr` para transformar espacios en saltos de línea)](./pract-2/2.6-ejercicios-sobre-filtros-y-tuberias/5.md)
+6. [Determinar cuántos shells distintos se están usando en fichero `/etc/passwd`. (pista: `sort`, `uniq`, `wc`)](./pract-2/2.6-ejercicios-sobre-filtros-y-tuberias/6.md)
+7. [Descubrir si existen varios usuarios con el mismo UID. (pista: `sort`, `uniq`)](./pract-2/2.6-ejercicios-sobre-filtros-y-tuberias/7.md)
+8. [¿Cuántos dispositivos de tipo carácter o bloque hay definidos en el sistema? (pista: los dispositivos que reconoce el sistema están en `/dev`)](./pract-2/2.6-ejercicios-sobre-filtros-y-tuberias/8.md)
+9. [Obtener el número de procesos que hay actualmente ejecutándose en el sistema resolviendo funciones del escritorio Gnome (nota: todos los programas del entorno Gnome comienzan por `gnome-`)](./pract-2/2.6-ejercicios-sobre-filtros-y-tuberias/9.md)
+10. [De los procesos propiedad del usuario `usuario1`, obtener sus identificadores y el tiempo que llevan ejecutándose. La relación debe estar en orden inverso por el tiempo de ejecución. (pista: uso combinado `ps`y`sort`)](./pract-2/2.6-ejercicios-sobre-filtros-y-tuberias/10.md)
+11. [ Listar los archivos del usuario `usuario1` a los que se ha accedido en los últimos siete días. (pista: `find` y expresiones numéricas)](./pract-2/2.6-ejercicios-sobre-filtros-y-tuberias/11.md)
+12. [Encontrar los ficheros del usuario `usuario1` que terminan con extensión `.change` y en la misma orden cambiar su propietario a `root`. (pista: `find` con ejecución de orden en cada hallazgo)](./pract-2/2.6-ejercicios-sobre-filtros-y-tuberias/12.md)
+13. [Encontrar los ficheros del usuario `usuario1` que terminan con extensión `.sh` y concatenarlos todos en un único fichero llamado `mis_scripts.txt`. (pista: `find` con ejecución de orden en cada hallazgo)](./pract-2/2.6-ejercicios-sobre-filtros-y-tuberias/13.md)
 
 </details>
 
