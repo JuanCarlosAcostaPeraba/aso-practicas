@@ -96,7 +96,7 @@ Prácticas de la asignatura de Administración de Sistemas Operativos.
 8. [¿Cuántos dispositivos de tipo carácter o bloque hay definidos en el sistema? (pista: los dispositivos que reconoce el sistema están en `/dev`)](./pract-2/2.6-ejercicios-sobre-filtros-y-tuberias/8.md)
 9. [Obtener el número de procesos que hay actualmente ejecutándose en el sistema resolviendo funciones del escritorio Gnome (nota: todos los programas del entorno Gnome comienzan por `gnome-`)](./pract-2/2.6-ejercicios-sobre-filtros-y-tuberias/9.md)
 10. [De los procesos propiedad del usuario `usuario1`, obtener sus identificadores y el tiempo que llevan ejecutándose. La relación debe estar en orden inverso por el tiempo de ejecución. (pista: uso combinado `ps`y`sort`)](./pract-2/2.6-ejercicios-sobre-filtros-y-tuberias/10.md)
-11. [ Listar los archivos del usuario `usuario1` a los que se ha accedido en los últimos siete días. (pista: `find` y expresiones numéricas)](./pract-2/2.6-ejercicios-sobre-filtros-y-tuberias/11.md)
+11. [Listar los archivos del usuario `usuario1` a los que se ha accedido en los últimos siete días. (pista: `find` y expresiones numéricas)](./pract-2/2.6-ejercicios-sobre-filtros-y-tuberias/11.md)
 12. [Encontrar los ficheros del usuario `usuario1` que terminan con extensión `.change` y en la misma orden cambiar su propietario a `root`. (pista: `find` con ejecución de orden en cada hallazgo)](./pract-2/2.6-ejercicios-sobre-filtros-y-tuberias/12.md)
 13. [Encontrar los ficheros del usuario `usuario1` que terminan con extensión `.sh` y concatenarlos todos en un único fichero llamado `mis_scripts.txt`. (pista: `find` con ejecución de orden en cada hallazgo)](./pract-2/2.6-ejercicios-sobre-filtros-y-tuberias/13.md)
 
