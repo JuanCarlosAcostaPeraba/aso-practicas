@@ -107,18 +107,4 @@ Prácticas de la asignatura de Administración de Sistemas Operativos.
       <a href="./pract-2/2.7-ejercicios-sobre-filtros-y-tuberias/">2.6 Ejercicios sobre filtros y tuberías</a>
    </summary>
 
-1. [](./pract-2/2.6-ejercicios-sobre-filtros-y-tuberias/1.md)
-2. [](./pract-2/2.6-ejercicios-sobre-filtros-y-tuberias/2.md)
-3. [](./pract-2/2.6-ejercicios-sobre-filtros-y-tuberias/3.md)
-4. [](./pract-2/2.6-ejercicios-sobre-filtros-y-tuberias/4.md)
-5. [](./pract-2/2.6-ejercicios-sobre-filtros-y-tuberias/5.md)
-6. [](./pract-2/2.6-ejercicios-sobre-filtros-y-tuberias/6.md)
-7. [](./pract-2/2.6-ejercicios-sobre-filtros-y-tuberias/7.md)
-8. [](./pract-2/2.6-ejercicios-sobre-filtros-y-tuberias/8.md)
-9. [](./pract-2/2.6-ejercicios-sobre-filtros-y-tuberias/9.md)
-10. [](./pract-2/2.6-ejercicios-sobre-filtros-y-tuberias/10.md)
-11. [](./pract-2/2.6-ejercicios-sobre-filtros-y-tuberias/11.md)
-12. [](./pract-2/2.6-ejercicios-sobre-filtros-y-tuberias/12.md)
-13. [](./pract-2/2.6-ejercicios-sobre-filtros-y-tuberias/13.md)
-
 </details>
