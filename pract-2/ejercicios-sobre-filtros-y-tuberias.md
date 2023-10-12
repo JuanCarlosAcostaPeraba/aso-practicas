@@ -63,17 +63,17 @@ ps -u usuario1 -o time,pid | sort -nr
 ## Listar los archivos del usuario `usuario1` a los que se ha accedido en los últimos siete días. (pista: `find` y expresiones numéricas)
 
 ```bash
-find /home/usuario1 -type f -atime -7
+find / -user usuario1 -type f -atime -7
 ```
 
 ## Encontrar los ficheros del usuario `usuario1` que terminan con extensión `.change` y en la misma orden cambiar su propietario a `root`. (pista: `find` con ejecución de orden en cada hallazgo)
 
 ```bash
-
+find / -user usuario1 -type f -name "*.change" -exec chown root {} \;
 ```
 
 ## Encontrar los ficheros del usuario `usuario1` que terminan con extensión `.sh` y concatenarlos todos en un único fichero llamado `mis_scripts.txt`. (pista: `find` con ejecución de orden en cada hallazgo)
 
 ```bash
-
+find / -user usuario1 -type f -name "*.sh" -exec cat {} \; > mis_scripts.txt
 ```
