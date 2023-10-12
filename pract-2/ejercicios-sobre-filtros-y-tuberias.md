@@ -51,19 +51,19 @@ ls -l /dev | grep -E "^c|^b" -c
 ## Obtener el número de procesos que hay actualmente ejecutándose en el sistema resolviendo funciones del escritorio Gnome (nota: todos los programas del entorno Gnome comienzan por `gnome-`)
 
 ```bash
-
+ps -e -o comm | grep -E "^gnome-" -c
 ```
 
 ## De los procesos propiedad del usuario `usuario1`, obtener sus identificadores y el tiempo que llevan ejecutándose. La relación debe estar en orden inverso por el tiempo de ejecución. (pista: uso combinado `ps`y`sort`)
 
 ```bash
-
+ps -u usuario1 -o time,pid | sort -nr
 ```
 
 ## Listar los archivos del usuario `usuario1` a los que se ha accedido en los últimos siete días. (pista: `find` y expresiones numéricas)
 
 ```bash
-
+find /home/usuario1 -type f -atime -7
 ```
 
 ## Encontrar los ficheros del usuario `usuario1` que terminan con extensión `.change` y en la misma orden cambiar su propietario a `root`. (pista: `find` con ejecución de orden en cada hallazgo)
