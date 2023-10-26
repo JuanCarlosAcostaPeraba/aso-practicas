@@ -169,7 +169,7 @@ El comando `ps` muestra los procesos que se están ejecutando en el sistema. La 
 _Respuesta:_
 
 ```bash
-ps -e -opid,ppid,user,pcpu,cputime,cmd --sort=cputime | tail -n 5
+ps -e -o pid,ppid,user,pcpu,cputime,cmd --sort=cputime | tail -n 5
 ```
 
 ## EJERCICIOS AVANZADOS
@@ -178,42 +178,109 @@ ps -e -opid,ppid,user,pcpu,cputime,cmd --sort=cputime | tail -n 5
 
 En las carpetas `/usr/bin` y `/etc` existen varios ficheros homónimos (que tienen el mismo nombre), por ejemplo `/usr/bin/passwd` y `/etc/passwd`. Obtenga la lista de todos esos ficheros homónimos.
 
+_Respuesta:_
+
 ```bash
 ls /usr/bin/ /etc/ | sort | uniq -d
 ```
 
-###
+### Filtrar procesos (dificultad media)
+
+En dos órdenes, muestre:
+
+- Los 10 procesos que llevan más tiempo en el sistema.
+- Los 10 procesos que han consumido más CPU hasta el momento.
+
+En ambos casos, muestre la siguiente información de cada proceso: PID, PPID, orden que se lanzó, tiempo en el sistema y consumo acumulado de CPU. Ordene la lista por el criterio de filtrado que se solicita en cada caso (tiempo en el sistema o consumo de CPU).
+
+_Respuesta:_
 
 ```bash
-
+ps -e -o pid,ppid,comm,etime,cputime --sort=etime | tail -n 10
 ```
 
-###
-
 ```bash
-
+ps -e -o pid,ppid,comm,etime,cputime --sort=cputime | tail -n 10
 ```
 
-###
+### Propietarios en un directorio (dificultad media)
+
+Obtenga la lista de usuarios que son propietarios de algún fichero en el directorio `una_carpeta`. Cumpla con estos requisitos:
+
+- La búsqueda debe considerar cualquier tipo de fichero: regulares, dispositivos, directorios...
+- No haga recorridos recursivos, sólo rastree los elementos que están directamente accesibles desde el directorio `una_carpeta`.
+- El listado no debe mostrar duplicados (un usuario sólo puede aparecer una vez en la lista).
+
+_Respueta:_
 
 ```bash
-
+ls -l una_carpeta | cut -d ' ' -f 3 | uniq
 ```
 
-###
+### Propietarios de múltiples ficheros (dificultad media)
+
+Obtenga la lista de usuarios que son propietarios de más de un fichero en el directorio `/tmp` cumpliendo con estos requisitos:
+
+1. La búsqueda debe considerar cualquier tipo de fichero: regulares, dispositivos, directorios...
+2. No haga recorridos recursivos, sólo rastree los elementos que están directamente accesibles desde el directorio `/tmp`.
+3. El listado no debe mostrar duplicados (un usuario sólo puede aparecer una vez en la lista).
+
+_Respueta:_
 
 ```bash
-
+ls -l /tmp | cut -d ' ' -f 3 | uniq -d
 ```
 
-###
+### Comprimir ficheros grandes (dificultad media)
+
+Comprima con `gzip` cada uno de los ficheros mayores de 10 KiB que existan bajo el directorio actual, de manera que cada fichero mayor de 10 KiB sea reemplazado por su versión comprimida.
+
+_Respuesta:_
 
 ```bash
-
+find . -size +10k -exec gzip {} \;
 ```
 
-###
+### Localizar documentos HTML (dificultad media-alta)
+
+Obtenga la lista de todos los directorios del sistema que contienen documentos HTML. Los documentos HTML son aquellos que tienen extensión `.htm` o`.html`, sin distinguir mayúsculas.
+
+_Respuesta:_
 
 ```bash
+find / -regex '.*\.html?' -exec dirname {} \;
+```
 
+### Trasladar archivos grandes (dificultad alta)
+
+Este ejercicio es difícil, así que lo plantearemos por iteraciones de complejidad creciente. Todas las versiones deben poder resolverse con una única orden. No se preocupe si no llega a realizar la iteración 4: en la asignatura lo máximo que le podríamos pedir es algo parecido a la versión 3 y normalmente será algo similar a la versión 2.
+
+_Iteración 1._ Muestre las rutas todos los ficheros del sistema que midan más de 100MiB y que no hayan sido accedidos en el último mes.
+
+_Iteración 2._ Elimine todos los ficheros que cumplan con los criterios de la versión 1.
+
+_Iteración 3._ Traslade cada uno de esos ficheros a la carpeta `/grandes-sin-usar`, cambiando su nombre por`fichero.YYYYMMDD`, donde `fichero` es el nombre original y`YYYYMMDD` es la fecha actual (hoy) en formato año-mes-día.
+
+> Ejemplo: si ejecutamos el script el día 12/10/2015, el fichero `penicula.mkv` se traslada a`/grandes-sin-usar/penicula.mkv.20151012`.
+
+_Iteración 4 (final)._ Lo mismo que la versión 3, pero el nombre del fichero trasladado debe ser `nombre.YYYYMMDD.extensión`, donde `nombre` es el nombre original del fichero sin su extensión, `YYYYMMDD` es la fecha de último acceso el fichero y`extensión` son los últimos caracteres del nombre del fichero, después del carácter `.`, si existe.
+
+> Ejemplo: el fichero `penicula.mkv`, accedido por última vez el día 7/1/2014, se convertirá en`penicula.20140107.mkv`.
+
+_Respuesta:_
+
+```bash
+find / -size +100M -atime +30
+```
+
+```bash
+find / -size +100M -atime +30 -exec rm {} \;
+```
+
+```bash
+find / -size +100M -atime +30 -exec mv {} /grandes-sin-usar/{}.$(date +%Y%m%d) \;
+```
+
+```bash
+find / -size +100M -atime +30 -exec mv {} /grandes-sin-usar/$(basename {} .$(basename {} | cut -d . -f 2)).$(date +%Y%m%d).$(basename {} | cut -d . -f 2) \;
 ```
