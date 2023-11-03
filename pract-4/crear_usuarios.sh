@@ -28,7 +28,17 @@ fichero_usuarios=$2
 
 while read usuario
 do
-	(( $(grep -c "^$usuario:" /etc/passwd) == 0 )) && useradd -g $grupo_secundario $usuario || usermod -a -G $grupo_secundario $usuario
+	if (( $(grep -c "^$usuario:" /etc/passwd) == 0 ))
+	then
+		useradd -g $grupo_secundario $usuario
+	else
+		usermod -aG $grupo_secundario $usuario
+	fi
 done < $fichero_usuarios
+
+echo "Users:"
+echo $(tail -3 /etc/passwd)
+echo "Group:"
+echo $(tail -1 /etc/group)
 
 exit 0
