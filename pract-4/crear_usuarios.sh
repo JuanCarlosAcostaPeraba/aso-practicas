@@ -1,18 +1,5 @@
 #!/bin/bash
 
-# ./crear_usuarios.sh <nombre de grupo secundario> <ruta de fichero con los usuarios indicados por cada línea>
-
-# Pseudocodigo:
-# si el numero de argumentos es distinto de 2
-# 	mostrar mensaje de error
-# si el grupo secundario no existe
-# 	crear grupo secundario
-# para cada linea del fichero de usuarios
-# 	si el usuario no existe
-# 		crear usuario con grupo secundario
-# 	si el usuario existe
-# 		le añadimos el grupo secundario
-
 error ()
 {
 	echo "$1" >&2
