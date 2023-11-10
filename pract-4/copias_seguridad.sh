@@ -8,8 +8,8 @@ error()
 
 (( $# != 1 )) && error "Error: Indique el nivel de copia" 1
 
-dir="$HOME/prueba"
-backup="$HOME/backups"
+dir="$HOME/Prueba"
+backup="$HOME/Backups"
 sufijo="nivel$1_$(date +%Y%m%d_%H%M)"
 testigo="$backup/testigo.nivel0"
 
