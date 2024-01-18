@@ -39,7 +39,7 @@ grep root /etc/passwd | cut -d ':' -f 1,5 | sort -t ':' -k 1
 ## Mostrar un listado ordenado por el identificador de usuario de todas las líneas del fichero `/etc/passwd` que contengan la cadena `bash`
 
 ```bash
-grep bash /etc/passwd | sort -t ':' -k 3
+grep bash /etc/passwd | sort -t ':' -k 3 -n
 ```
 
 ## Mostrar un listado numerado de todas las líneas del fichero `/etc/passwd` que contengan la cadena `bash`

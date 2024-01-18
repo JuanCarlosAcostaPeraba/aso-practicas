@@ -60,7 +60,7 @@ find / ! -user root ! -group root -size +1024k
 find / -user root -type f -perm /u+x -size +1024k
 ```
 
-## Listar los archivos de los directorios `/bin`, `/sbin` y `/usr/bin` cuyos permisos sean 77
+## Listar los archivos de los directorios `/bin`, `/sbin` y `/usr/bin` cuyos permisos sean 777
 
 ```bash
 find /bin /sbin /usr/bin -perm 777
