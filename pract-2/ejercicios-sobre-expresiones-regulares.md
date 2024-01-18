@@ -27,7 +27,7 @@ grep -E '^[aeiou].*tion$' -i /usr/share/dict/words
 ## Palabras que empiezan por vocal, terminan en `tion` y tienen hasta ocho letras
 
 ```bash
-grep -E '^[aeiou].{,5}tion$' -i /usr/share/dict/words
+grep -E '^[aeiou].{,3}tion$' -i /usr/share/dict/words
 ```
 
 ## Palabras que no contienen vocales
