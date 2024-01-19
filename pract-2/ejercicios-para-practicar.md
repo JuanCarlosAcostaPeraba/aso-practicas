@@ -63,7 +63,7 @@ _Respuesta:_
 Este comando muestra el contenido del fichero `/etc/group`, lo ordena por el primer campo usando como separados los dos puntos `:` y corta los campos 1 y 3 usando como separador los dos puntos `:`.
 
 ```bash
-cut -d : -f 1,3 /etc/passwd | sort -t : -k 1
+cut -d : -f 1,3 /etc/group | sort -t : -k 1
 ```
 
 ### Enumere los shells que usan los usuarios de su sistema, sin que haya repeticiones (pista: sort y uniq)
@@ -214,7 +214,7 @@ Obtenga la lista de usuarios que son propietarios de algún fichero en el direct
 _Respueta:_
 
 ```bash
-ls -l una_carpeta | cut -d ' ' -f 3 | uniq
+ls -l una_carpeta | cut -d ' ' -f 3 | sort | uniq
 ```
 
 ### Propietarios de múltiples ficheros (dificultad media)
@@ -228,7 +228,7 @@ Obtenga la lista de usuarios que son propietarios de más de un fichero en el di
 _Respueta:_
 
 ```bash
-ls -l /tmp | cut -d ' ' -f 3 | uniq -d
+ls -l /tmp | cut -d ' ' -f 3 | sort | uniq -d
 ```
 
 ### Comprimir ficheros grandes (dificultad media)
